@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct CountriesApp: App {
+    
+    @StateObject var vm = CountryDataSubscriberModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(vm)
         }
     }
 }
